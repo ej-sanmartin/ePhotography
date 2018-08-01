@@ -19,7 +19,7 @@ body, html {
 
 .parallax {
   background-image: url("https://cbsnewyork.files.wordpress.com/2015/05/thinkstockphotos-469816095.jpg");
-  height: 110%;
+  height: 100%;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
