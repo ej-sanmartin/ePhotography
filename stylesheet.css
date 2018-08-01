@@ -10,6 +10,13 @@ body, html {
   box-sizing: border-box;
 }
 
+.main-grid-container {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
 .parallax {
   background-image: url("https://cbsnewyork.files.wordpress.com/2015/05/thinkstockphotos-469816095.jpg");
   height: 110%;
@@ -37,7 +44,27 @@ header::after {
 
 .logo {
   float: left;
+  color: white;
   font-weight: 200;
+}
+
+.logo:hover {
+  color: #504D50;
+}
+
+.logo::before {
+  content: "";
+  display: block;
+  height: .15em;
+  background-color: #504D50;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 175ms;
+}
+
+.logo:hover::before {
+  width: 20%;
 }
 
 nav {
@@ -46,6 +73,7 @@ nav {
 
 nav ul {
   margin: 0;
+  margin-bottom: 1em;
   padding: 0;
   list-style: none;
 }
@@ -86,7 +114,7 @@ nav ul li a:hover::before {
   padding-bottom: 2em;
   display: grid;
   grid-gap: .25em .25em;
-  grid-template-areas: "a b b c" "d b b e" "f f g h" "i i j k";
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .item-1 {
@@ -553,3 +581,4 @@ footer div ul li:first-child {
     background-attachment: scroll;
   }
 }
+
